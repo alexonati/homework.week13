@@ -1,7 +1,5 @@
 package org.example;
 
-import java.util.UUID;
-
 public class Accommodation {
     private int id;
     private String type;
@@ -17,13 +15,17 @@ public class Accommodation {
         this.description = description;
     }
 
+    public Accommodation (String type, String bedType, int maxGuest, String description) {
+        this.type = type;
+        this.bedType = bedType;
+        this.maxGuest = maxGuest;
+        this.description = description;
+    }
+
     public int getId () {
         return id;
     }
 
-    public void setId (int id) {
-        this.id = id;
-    }
 
     public String getType () {
         return type;

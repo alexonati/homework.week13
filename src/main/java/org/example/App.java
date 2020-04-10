@@ -1,26 +1,38 @@
 package org.example;
 
 
-import java.sql.*;
-import java.sql.SQLException;
-import java.util.Random;
+import java.util.Map;
+
 
 public class App {
-    public static void main (String[] args) throws SQLException {
 
 
-        Random rand = new Random();
-        int id = rand.nextInt(10000);
+   public static void main (String[] args) {
 
-        Accommodation accomodation1 = new Accommodation(id, "hotel", "single", 1, "has a nice view");
 
-        Accommodation accomodation2 = new Accommodation(id, "cabin", "double", 2, "has great outdoors");
+      Accommodation accomodation1 = new Accommodation("hotel", "single", 1, "has a nice view");
+      Accommodation accomodation2 = new Accommodation("cabin", "double", 2, "has great outdoors");
 
-        AccommodationService service = new AccommodationService();
+      RoomFair roomFair1 = new RoomFair("summer", 65.00);
+      RoomFair roomFair2 = new RoomFair("winter", 100.00);
 
-        service.addAccommodation(accomodation1);
+      AccommodationService accommodationService = new AccommodationService();
 
-       service.getAccommodations();
+      accommodationService.addAccommodation(accomodation1, roomFair1);
 
-    }
+      accommodationService.addAccommodation(accomodation2, roomFair2);
+
+      Map<Accommodation, RoomFair> accommodations = accommodationService.getAccommodationDetails();
+
+
+      for (Accommodation key : accommodations.keySet()) {
+         RoomFair roomFair = accommodations.get(key);
+         System.out.println(roomFair);
+         for (RoomFair value : accommodations.values()) {
+            Accommodation accommodation = (Accommodation) accommodations.values();
+            System.out.println(accommodation);
+         }
+      }
+
+   }
 }

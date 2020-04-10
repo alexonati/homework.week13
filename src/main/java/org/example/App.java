@@ -24,7 +24,7 @@ public class App {
 
       Map<Accommodation, RoomFair> accommodations = accommodationService.getAccommodationDetails();
 
-
+//      I ended up doing a for:each, but this can be used as well - https://kodejava.org/how-do-i-use-reflectiontostringbuilder-class/ :)
       for (Accommodation key : accommodations.keySet()) {
          RoomFair roomFair = accommodations.get(key);
          System.out.println(roomFair);
@@ -33,6 +33,5 @@ public class App {
             System.out.println(accommodation);
          }
       }
-
    }
 }

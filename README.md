@@ -1,6 +1,6 @@
 # AccomodationDetails
 
-* A java application that establishes a database connection and writes data to tables in that database.
+A java application that establishes a database connection and writes data to tables in that database.
 
 # What I learned:
 
